@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base::head}"></head>
+
+<title>Booking Receipt</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<body class="bg-light">
+
+	<!-- Navbar Start -->
+	<div th:replace="~{base::navbar}"></div>
+	<!-- Navbar End -->
+
+
+	<!-- Page Header Start -->
+	<div th:replace="~{base::header(text='Success')}"></div>
+	<!-- Page Header End -->
+
+
+	<!-- Success Start -->
+	<div class="container-fluid py-5">
+		<div class="container">
+
+			<div class="container my-5">
+				<div class="card shadow-lg p-4 mx-auto" style="max-width: 600px;">
+					<h2 class="text-center text-success mb-4">Booking Successful
+						🎉</h2>
+
+					<h5 class="mb-3">Booking Receipt</h5>
+					<table class="table table-bordered">
+						<tr>
+							<th>Name</th>
+							<td th:text="${booked.name}"></td>
+						</tr>
+						<tr>
+							<th>Phone</th>
+							<td th:text="${booked.phoneNumber}"></td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td th:text="${booked.email}"></td>
+						</tr>
+						<tr>
+							<th>Date</th>
+							<td th:text="${booked.date}"></td>
+						</tr>
+						<tr>
+							<th>Time</th>
+							<td th:text="${booked.time}"></td>
+						</tr>
+						<tr>
+							<th>Persons</th>
+							<td th:text="${booked.person}"></td>
+						</tr>
+					</table>
+
+					<div class="text-center mt-4">
+						<a href="/" class="btn btn-primary px-4">Back to Home</a>
+						<button onclick="window.print()"
+							class="btn btn-outline-secondary px-4">Print Receipt</button>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<!-- Success End -->
+
+
+	<!-- Footer Start -->
+	<div th:replace="~{base::footer}"></div>
+	<!-- Footer End -->
+
+
+	<!-- Back to Top -->
+	<div th:replace="~{base::script}"></div>
+</body>
+
+</html>
